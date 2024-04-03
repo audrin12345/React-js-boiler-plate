@@ -9,7 +9,7 @@ let components = [{
 }, {
     "title": "Test1",
     "content": "Rendered Test1 Component",
-    "route": "/test1",
+    "route": "/about",
     'component': <About title='Welcome About' />
 }, {
     "title": "Test2",
