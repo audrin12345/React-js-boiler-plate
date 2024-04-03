@@ -7,8 +7,8 @@ import {
 	Route,
   Link,
 } from "react-router-dom";
-import context from './context/context'
-import DynamicComponentsData from './stubs/DynamicComponentsData';
+import context from '../context/context'
+import DynamicComponentsData from '../stubs/DynamicComponentsData';
 
 function App() {
   const [title, setTitle] = useState<string>();

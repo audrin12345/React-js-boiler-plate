@@ -1,5 +1,6 @@
-import About from "../pages/about/about"
-import Home from "../pages/home/home"
+import About from "../components/about/about"
+import Home from "../components/home/home"
+
 
 let components = [{
     "title": "Home",
