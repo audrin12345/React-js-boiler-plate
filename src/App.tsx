@@ -12,35 +12,32 @@ import DynamicComponentsData from './stubs/DynamicComponentsData';
 
 function App() {
   const [title, setTitle] = useState<string>();
-  let dynamicComponents = DynamicComponentsData;
+
 	return (
     <context.Provider value={{title, setTitle}}>
-        <div className="App">
-                <h1>Header</h1>
-                <Router>
-                    <div>
-                        <div>
-                            {
-                                dynamicComponents.map((item, index) => {
-                                    return <div key={index}><Link to={item.route} >{item.title}</Link></div>
-                                })
-                            }
-                        </div>
-                        <div>
-                            {
-                                dynamicComponents.map((item, index) => {
-                                    return <Routes>
-                                      <Route  key={index} path={item.route} element={item.component} />
-                                    </Routes>
-                                })
-                            }
-                        </div>
-                    </div>
-                </Router>
-            </div>
-                   
-               
-      {/* </Router> */}
+      <div className="App">
+              <h1>Header</h1>
+              <Router>
+                  <div>
+                      <div>
+                          {
+                              DynamicComponentsData.map((item, index) => {
+                                  return <div key={index}><Link to={item.route} >{item.title}</Link></div>
+                              })
+                          }
+                      </div>
+                      <div>
+                          {
+                              DynamicComponentsData.map((item, index) => {
+                                  return <Routes>
+                                    <Route  key={index} path={item.route} element={item.component} />
+                                  </Routes>
+                              })
+                          }
+                      </div>
+                  </div>
+              </Router>
+          </div> 
     </context.Provider>
 	);
 }
