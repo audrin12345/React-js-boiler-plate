@@ -29,9 +29,9 @@ function App() {
                       <div>
                           {
                               DynamicComponentsData.map((item, index) => {
-                                  return <Routes>
-                                    <Route  key={index} path={item.route} element={item.component} />
-                                  </Routes>
+                                return <Routes>
+                                            <Route  key={index} path={item.route} element={item.component} />
+                                        </Routes>
                               })
                           }
                       </div>
