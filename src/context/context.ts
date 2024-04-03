@@ -5,6 +5,6 @@ export interface contextprops{
     setTitle?:(value : string) => void
 }
 
-const testcontext = createContext<contextprops>({});
+const context = createContext<contextprops>({});
 
-export default testcontext
+export default context

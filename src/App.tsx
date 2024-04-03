@@ -1,6 +1,6 @@
 // Filename - App.js
 
-import React, { useState } from "react";
+import { useState } from "react";
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -8,20 +8,21 @@ import {
 } from "react-router-dom";
 import Home from "./pages/home/home";
 import About from "./pages/about/about";
-import testcontext from './context/testcontext'
+import context from './context/context'
 
 
 function App() {
   const [title, setTitle] = useState<string>();
+  
 	return (
-    <testcontext.Provider value={{title, setTitle}}>
+    <context.Provider value={{title, setTitle}}>
       <Router>
         <Routes>
           <Route path="/" element={<Home title="Welcome Home" />} />
           <Route path="/about" element={<About title='Welcome About' />} />
         </Routes>
       </Router>
-    </testcontext.Provider>
+    </context.Provider>
 	);
 }
 

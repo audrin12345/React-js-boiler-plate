@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import testcontext from "../../context/testcontext";
+import context from "../../context/context";
 import styles from './about.module.scss';
 
 interface aboutProps{
@@ -7,14 +7,16 @@ interface aboutProps{
 }
 
 const About:React.FC<aboutProps> =({title}) =>{
-    const context = useContext(testcontext)
-    context.setTitle && context?.setTitle('test')
-    console.log(context.title)
+    const setContextValue = useContext(context)
+    setContextValue.setTitle && setContextValue?.setTitle(title)
+   
     return (
         <div className={styles.component}>
             <h1 className={styles.headline}>
                 {title}
             </h1>
+            <div>Context Value</div>
+            <span>{setContextValue.title}</span>
         </div>
     );
 }
